@@ -29,13 +29,14 @@ words = ['москва', 'торвальдс', 'кубань', 'процессо
 word_tostrip = random.choice(words)
 currentword = list(word_tostrip)
 
-currenttask = [] #разгаданые буквы лежат здесь
+currenttask = ['*'] * len(currentword) #разгаданые буквы лежат здесь
+usedletters = [] #все названные буквы
 score = 0 #очки игрока
 
 #основная логика разгадывания
 while True:
     #print(currentword)
-    #print(currenttask) для дебага
+    print(f"Разгаданые буквы: {''.join(currenttask)} ")
     if word_tostrip == 'москва':
         print("Столица страны")
     elif word_tostrip == 'торвальдс':
@@ -46,12 +47,12 @@ while True:
         print("Компонент компьютера")
 
     letter = input('называйте букву: ')
+    usedletters.append(letter)
 
-    #проверка на наличие буквы в слове
     if letter in currentword:
-        currenttask.append(letter) #добавить правильную буккву в разгаданное (пока что работает не так как надо)
         score += 10 #добавление +10 очков
-    elif letter in currenttask:
-        print("Вы же называли эту букву")
     else:
         print("Такой буквы нет")
+    # if letter in usedletters:
+    #     print("Вы же называли эту букву")
+#пока что на этом всё, надо доделать показ букв и сделать нормальную функцию названых букв
