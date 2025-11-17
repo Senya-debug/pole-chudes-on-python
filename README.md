@@ -1,1 +1,1 @@
-# pole-chudes-on-puthon
+# pole-chudes-on-python
