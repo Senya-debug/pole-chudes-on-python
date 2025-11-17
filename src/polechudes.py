@@ -51,5 +51,7 @@ while True:
     if letter in currentword:
         currenttask.append(letter) #добавить правильную буккву в разгаданное (пока что работает не так как надо)
         score += 10 #добавление +10 очков
+    elif letter in currenttask:
+        print("Вы же называли эту букву")
     else:
         print("Такой буквы нет")
