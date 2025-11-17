@@ -30,6 +30,7 @@ word_tostrip = random.choice(words)
 currentword = list(word_tostrip)
 
 currenttask = [] #разгаданые буквы лежат здесь
+score = 0 #очки игрока
 
 #основная логика разгадывания
 while True:
@@ -49,5 +50,6 @@ while True:
     #проверка на наличие буквы в слове
     if letter in currentword:
         currenttask.append(letter) #добавить правильную буккву в разгаданное (пока что работает не так как надо)
+        score += 10 #добавление +10 очков
     else:
-        print("Такой буквы нет") #если такой буквы нет
+        print("Такой буквы нет")
