@@ -1,1 +1,1 @@
-# pole-chudes-on-python
+# POLE CHUDES ON PYTHON
