@@ -35,7 +35,7 @@ score = 0 #очки игрока
 
 #основная логика разгадывания
 while True:
-    #print(currentword)
+    print(usedletters)
     print(f"Разгаданые буквы: {''.join(currenttask)} ")
     if word_tostrip == 'москва':
         print("Столица страны")
@@ -51,8 +51,11 @@ while True:
 
     if letter in currentword:
         score += 10 #добавление +10 очков
+        letterindex = currentword.index(letter)
+        #currenttask.insert(letterindex, letter)
+        currenttask[letterindex] = letter
+        print(letterindex)
     else:
         print("Такой буквы нет")
-    # if letter in usedletters:
-    #     print("Вы же называли эту букву")
+    
 #пока что на этом всё, надо доделать показ букв и сделать нормальную функцию названых букв
