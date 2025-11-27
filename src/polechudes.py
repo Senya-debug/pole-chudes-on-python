@@ -25,7 +25,7 @@ import random
 
 
 #слова 
-words = ['москва', 'торвальдс', 'кубань', 'процессор']
+words = ['москва', 'торвальдс', 'кубань']
 
 #разделение слова из списка на отдельные символы, слова выбираются рандомно
 word_tostrip = random.choice(words)
@@ -46,8 +46,6 @@ while True:
         print("Финский програмист. Создатель Linux и Git")
     elif word_tostrip == 'кубань':
         print("Регион России")
-    elif word_tostrip == 'процессор':
-        print("Компонент компьютера")
 
     letter = input('называйте букву: ')
     usedletters.append(letter)
