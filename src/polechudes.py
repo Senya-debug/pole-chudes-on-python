@@ -22,6 +22,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #импорт библиотек
 import random
 
+
+
 #слова 
 words = ['москва', 'торвальдс', 'кубань', 'процессор']
 
@@ -32,6 +34,7 @@ currentword = list(word_tostrip)
 currenttask = ['*'] * len(currentword) #разгаданые буквы лежат здесь
 usedletters = [] #все названные буквы
 score = 0 #очки игрока
+
 
 #основная логика разгадывания
 while True:
@@ -51,11 +54,17 @@ while True:
 
     if letter in currentword:
         score += 10 #добавление +10 очков
-        letterindex = currentword.index(letter)
-        #currenttask.insert(letterindex, letter)
-        currenttask[letterindex] = letter
-        print(letterindex)
+        # letterindex = currentword.index(letter)
+        # #currenttask.insert(letterindex, letter)
+        # currenttask[letterindex] = letter
+        for i in range(len(currentword)):
+            if currentword[i] == letter:
+                currenttask[i] = letter
+        #print(letterindex) для дебага индекса букв
+    elif len(currentword) > len(set(currentword)):
+        print("тут две буквы")
     else:
         print("Такой буквы нет")
-    
-#пока что на этом всё, надо доделать показ букв и сделать нормальную функцию названых букв
+    if '*' not in currenttask:
+        print(f"Игра окончена вы набрали: {score} очков")
+        break
